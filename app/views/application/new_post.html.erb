@@ -1,0 +1,38 @@
+<!-- app/views/application/new_post.html.erb -->
+
+<html>
+  <body>
+
+    <!-- when you click the label in the browser, the focus will go to the input field
+visually impaired users that depend on screen reading software will be able to use your form, since screen readers depend on these attributes to associate form inputs with their labels -->
+
+    <form method="post" action="/create_post">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+      <label for="title"> Title</label>
+      <input id="title" name="title" type="text" value="<%= post.title %>" />
+      <br /> <br />
+
+      <label for="body"> Body</label>
+      <textarea id="body" name="body"><%= post.body %></textarea>
+      <br /> <br />
+
+      <label for="author"> Author</label>
+      <input id="author" name="author" type="text" value="<%= post.author %>" />
+      <br /> <br />
+
+      <input type="submit" value="Create Post" />
+
+    </form>
+
+    <br />
+    <div class="errors">
+      <% post.errors.each do |attribute, error| %>
+        <p class="error" style="color: orange">
+          <%= attribute %>: <%= error %>
+        </p>
+      <% end%>
+    </div>
+    <a href="/list_posts">Back to Posts</a>
+  </body>
+</html>

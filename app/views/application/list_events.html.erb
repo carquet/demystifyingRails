@@ -1,0 +1,17 @@
+<div class="events">
+      <% events.each do |event| %>
+        <div class="event">
+
+          <h2 class="name">
+            <%= event['name'] %>
+          </h2>
+
+          <small class="meta">
+            <span class="date">by <%= event['date'] %> -</span>
+            <em class="created_at"><%= event['created_at'] %></em>
+          </small>
+
+        </div>
+        <hr />
+      <% end %>
+    </div>
