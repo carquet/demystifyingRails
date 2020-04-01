@@ -44,9 +44,5 @@ class Comment < BaseModel
 
 
 
-
-
-
-
  
 end

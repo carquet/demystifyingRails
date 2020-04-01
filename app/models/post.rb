@@ -46,6 +46,7 @@ class Post < BaseModel
 	end
 
 	def update
+	
 		update_query = <<-SQL
 	      UPDATE posts
 	      SET title      = ?,
@@ -75,6 +76,10 @@ class Post < BaseModel
   def create_comment(attributes)
     comment = build_comment(attributes)
     comment.save
+  end
+
+  def delete_comment(comment_id)
+    Comment.find(comment_id).destroy
   end
 
 
