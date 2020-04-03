@@ -26,8 +26,7 @@
             <p class="comment_body"><%= comment.body %></p>
           </div>
        
-          <form method="post" action="/list_posts/<%= @post.id %>/delete_comment/<%=
-          comment.id %>">
+          <form method="delete" action="<%= post_comment_path(@post.id)%>">
             <input type="submit" value="Delete Comment" />
           </form>
           <hr />

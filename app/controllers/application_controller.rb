@@ -2,8 +2,9 @@ class ApplicationController < ActionController::Base
 	skip_before_action :verify_authenticity_token
 
 	def hello_world
-		name = params['name'] || "World!"
-		render 'application/hello_world', locals: {name: name}
+		#name = params['name'] || "World!"
+	
+    #render 'application/hello_world', locals: {name: name}
 	end
 
 	def list_posts
