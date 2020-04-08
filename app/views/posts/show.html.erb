@@ -32,7 +32,9 @@
             <p class="comment_body"><%= comment.body %></p>
           </div>
        
-          <form method="delete" action="<%= post_comment_path(@post.id)%>">
+          <form method="post" action="<%= post_comment_path(@post.id,comment.id)%>" >
+            
+            <input type="hidden" name="_method" value="delete">
             <input type="submit" value="Delete Comment" />
           </form>
           <hr />

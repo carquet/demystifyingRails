@@ -5,7 +5,7 @@ class Comment < BaseModel
     @id = attributes['id'] 
     @body = attributes['body']
     @author = attributes['author']
-    @post_id = attributes['post_id'] || "2" if no_id?
+    @post_id = attributes['post_id'] 
     @created_at ||= attributes['created_at']
     @errors = {}
   end

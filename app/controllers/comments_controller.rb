@@ -25,9 +25,9 @@ before_action :find_post, only: [:create, :destroy]
 
 	def destroy
 		#post = Post.find(params['post_id'])
-    post.delete_comment(params[:comment_id])
+    @post.delete_comment(params[:id])
 
-    redirect_to post_path(post_id)
+    redirect_to post_path(@post.id)
 	end
 
 	def find_post

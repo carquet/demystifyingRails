@@ -16,9 +16,10 @@
 
         <!-- link to edit post -->
           <%= link_to "edit",edit_post_path(post.id) %> 
-        <!-- link to delere post -->
-          <form method="post" action="/delete_post/<%= post.id %>" style='display: inline'>
-            <input type="submit" value="Delete" />
+        <!-- link to delete post -->
+          <form method="post" action="/posts/<%= post.id %>" style='display: inline'>
+            <input name= "_method" type="hidden" value="delete">
+           <input type="submit" value="Delete" /> 
           </form>
         </div>
         <hr />

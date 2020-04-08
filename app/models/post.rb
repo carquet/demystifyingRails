@@ -79,6 +79,7 @@ class Post < BaseModel
   end
 
   def delete_comment(comment_id)
+  	
     Comment.find(comment_id).destroy
   end
 

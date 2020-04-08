@@ -18,7 +18,7 @@
       <label for="author"> Author</label>
       <input id="author" name="author" type="text" value="<%= @post.author %>"/>
       <br /> <br />
-
+      <input name="_method" type="hidden" value="patch">
       <input type="submit" value="Update Post" />
 
     </form>
