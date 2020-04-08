@@ -13,15 +13,18 @@
             <span class="author">by <%= post.author %> -</span>
             <em class="created_at"><%= post.created_at %></em>
           </small>
-          <!-- link to edit post -->
+
+        <!-- link to edit post -->
           <a href="/edit_post/<%= post.id%>">Edit</a>
-                    <!-- ... -->
+        <!-- link to delere post -->
           <form method="post" action="/delete_post/<%= post.id %>" style='display: inline'>
             <input type="submit" value="Delete" />
           </form>
         </div>
         <hr />
-      <% end %>
+      <% end %> <!--end of iteration of @posts-->
       <!-- link to new post -->
     <a href="<%= new_post_path %>">New Post</a>
+    <!-- is the same as using helpers-->
+    <%= link_to 'New post', new_post_path %>
 </div>
