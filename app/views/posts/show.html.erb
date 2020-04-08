@@ -1,10 +1,12 @@
 <html>
   <body>
   <!-- link to list of posts -->
-    <a href="<%= posts_path %>">Back to Posts</a>
+<!--     <a href="<%= posts_path %>">Back to Posts</a> -->
+    <%= link_to "back to posts", posts_path %>
     <div class="post">
       <h2 class="title">
-        <%= @post.title %>
+        <%= @post.title %> / 
+       
       </h2>
 
       <small class="meta">
@@ -13,6 +15,10 @@
       </small>
 
       <p class="body"><%= @post.body %></p>
+
+       <%= link_to "edit", edit_post_path(@post.id) %>
+       <hr />
+       <hr />
   <!-- COMMENTS -->
       <div class="comments">
         <h3>Comments:</h3>
@@ -64,6 +70,6 @@
       </div>
     </div>
     <br />
-    <a href="<%= edit_post_path(@post.id) %>">Edit</a>
+    
   </body>
 </html>
