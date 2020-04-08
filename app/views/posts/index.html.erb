@@ -6,7 +6,7 @@
         <div class="post">
 
           <h2 class="title">
-            <a href="<%= post_path(post.id) %>"><%= post.title %></a>
+            <%= link_to post.title, post_path(post.id) %>
           </h2>
 
           <small class="meta">
@@ -15,7 +15,7 @@
           </small>
 
         <!-- link to edit post -->
-          <a href="/edit_post/<%= post.id%>">Edit</a>
+          <%= link_to "edit",edit_post_path(post.id) %> 
         <!-- link to delere post -->
           <form method="post" action="/delete_post/<%= post.id %>" style='display: inline'>
             <input type="submit" value="Delete" />
