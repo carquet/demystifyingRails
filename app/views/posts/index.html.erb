@@ -16,16 +16,20 @@
 
         <!-- link to edit post -->
           <%= link_to "edit",edit_post_path(post.id) %> 
-        <!-- link to delete post -->
-          <form method="post" action="/posts/<%= post.id %>" style='display: inline'>
+
+        <!-- link to DELETE post -->
+          <!-- <form method="post" action="/posts/<%= post.id %>" style='display: inline'>
             <input name= "_method" type="hidden" value="delete">
            <input type="submit" value="Delete" /> 
-          </form>
+          </form> -->
+          <%= form_tag post_path(post.id), method: "delete" do %>
+            <%= submit_tag "delete" %>
+          <% end %>
         </div>
         <hr />
       <% end %> <!--end of iteration of @posts-->
       <!-- link to new post -->
-    <a href="<%= new_post_path %>">New Post</a>
+    <!-- <a href="<%= new_post_path %>">New Post</a> -->
     <!-- is the same as using helpers-->
     <%= link_to 'New post', new_post_path %>
 </div>
