@@ -12,7 +12,7 @@ before_action :find_post, only: [:create, :destroy]
 	def create
 		#@post     = Post.find(params['post_id'])
     @comments = @post.comments
-    @comment  = @post.build_comment('body' => params[:body], 'author' => params[:author])
+    @comment  = @post.build_comment(params[:comment])
     if @comment.save
       # redirect for success
       redirect_to post_path(@post.id)

@@ -20,9 +20,7 @@ class PostsController < ApplicationController
 
 
 	def create
-		@post = Post.new('title' => params[:title],
-                    'body' => params[:body],
-                    'author' => params[:author])
+		@post = Post.new(params[:post])
 	    if @post.save
 	     redirect_to posts_path #(which will give us the posts index and list them)
       else

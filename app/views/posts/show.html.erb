@@ -45,9 +45,9 @@
 
         <% end %>
         
-      <div class="comments">
-        <!-- ... -->
-
+      
+    <!-- NEW COMMENT -->
+    <div class="comments">
         <!-- display errors -->
         <div class="errors">
           <% @comment.errors.each do |attribute, error| %>
@@ -56,7 +56,6 @@
             </p>
           <% end%>
         </div>
-    <!-- NEW COMMENT -->
     <!-- populate comment <form> with values -->
         <!-- <form method="post" action="<%= post_comments_path(@post.id) %>">
 
@@ -72,17 +71,17 @@
         <!-- </form> -->
         <%= form_tag post_comments_path(@post.id), method: "post" do %>
           <%= label_tag "body", "Comment "%>
-          <%= text_area_tag "body", @comment.body %>
+          <%= text_area_tag "comment[body]", @comment.body %>
           <br /> <br />
           <%=label_tag "author", "name"%>
-          <%= text_field_tag "author", @comment.author%>
+          <%= text_field_tag "comment[author]", @comment.author%>
            <br /> <br />
            <%= submit_tag "Add comment"%>
         <% end %>
         <hr />
-      </div>
-    </div>
-    <br />
+    </div><!--end of new comment-->
+  </div>
+  <br />
     
   </body>
 </html>
