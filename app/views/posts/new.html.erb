@@ -6,12 +6,13 @@
     <!-- when you click the label in the browser, the focus will go to the input field
 visually impaired users that depend on screen reading software will be able to use your form, since screen readers depend on these attributes to associate form inputs with their labels -->
 
-    <!-- <form method="post" action="/posts">
+<!--  <form method="post" action="/posts"> -->
 
-      <%= form_tag url_for(action: 'create'), method: "post" do %>
+      <%= form_tag posts_path, method: "post" do %>
 
-<!--       <label for="title"> Title</label>
-      <input id="title" name="title" type="text" value="<%= @post.title %>" /> -->
+
+    <!--   <label for="title"> Title</label>
+      <input id="title" name="title" type="text" value="<%= @post.title %>" />  -->
       <%= label_tag 'Title' %>
       <%= text_field_tag 'title', @post.title %>
       <br /> <br />
